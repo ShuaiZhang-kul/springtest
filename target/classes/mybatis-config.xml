@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="dbconfig.properties"></properties>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+<!--            配置连接池-->
+            <dataSource type="POOLED" >
+                        <property name="username" value="${jdbc.user}"></property>
+                        <property name="password" value="${jdbc.password}"></property>
+                        <property name="driver" value="${jdbc.driverClass}"></property>
+                        <property name="url" value="${jdbc.jdbcUrl}"></property>
+            </dataSource>
+
+        </environment>
+    </environments>
+
+<!--    引入我们编写的每一个接口实现xml文件-->
+    <mappers>
+<!--        <mapper resource="daoXml/EmployeeDao.xml"/>-->
+        
+<!--        下边搞一个批量注册的方法-->
+        <package name="com.shuai.dao"/>
+    </mappers>
+</configuration>

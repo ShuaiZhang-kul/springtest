@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.shuai">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+<!--    导入property文件-->
+<!--    <context:property-placeholder location="WEB-INF/dbconfig.properties"></context:property-placeholder>-->
+
+<!--&lt;!&ndash;    配置数据源&ndash;&gt;-->
+<!--    <bean id="ds" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+<!--        <property name="user" value="${jdbc.user}"></property>-->
+<!--        <property name="password" value="${jdbc.password}"></property>-->
+<!--        <property name="driverClass" value="${jdbc.driverClass}"></property>-->
+<!--        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>-->
+<!--        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>-->
+<!--    </bean>-->
+
+<!--    配置mybatis,因此可以全局得到sqlSessionFactory-->
+<!--    <bean class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--&lt;!&ndash;        <property name="configLocat"></property>&ndash;&gt;-->
+<!--    </bean>-->
+<!--    配置事务-->
+
+    <aop:config>
+
+    </aop:config>
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--名称空间写接口的全类名,用来告诉mybatis这个配置文件是用来实现哪个接口的-->
+<mapper namespace="com.shuai.dao.EmployerDao">
+    <!-- select:用来定义一id就是方法名:相当于这个select配置是来实现方法的
+    个查询操作
+     resultType是用来指定返回值类型
+     -->
+    <select id="getEmpById" resultType="com.shuai.bean.Employer">
+        -- 这里的这个id是从参数表里的同名变量取到的    public Employee getEmpById(Integer id);
+
+        select * from t_employer where id = #{id}
+    </select>
+</mapper>
